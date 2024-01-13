@@ -1,0 +1,157 @@
+import java.util.Scanner;
+public class Exercises 
+{
+	public void Ex1()
+	{
+		Scanner scan = new Scanner(System.in);
+		double sum = 0;
+		double avg = 0;
+		for(int i=0; i<5; i++)
+		{
+			System.out.println("enter a grade");
+			int grade = scan.nextInt();
+			sum = sum+grade;
+		}
+		avg = sum/5;
+		System.out.println(avg);
+	}
+	
+	public void Ex2()
+	{
+		Scanner scan = new Scanner(System.in);
+		int counter =0;
+		System.out.println("enter a word");
+		String word = scan.nextLine();
+		while(!word.equals("enter"))
+		{
+			System.out.println("enter a word");
+			word = scan.nextLine();
+			counter = counter+1;
+		}
+		if(word.equals("enter"))
+			counter= counter+1;
+		System.out.println(counter);
+	}
+	
+	public void Ex3(int correctCode)
+	{
+		 Scanner scanner = new Scanner(System.in);
+	     int attempts = 3;
+	     do {
+	            System.out.println("Enter your 4-digit credit card code:");
+	            int userCode = scanner.nextInt();
+
+	            if (userCode == correctCode) {
+	                System.out.println("How much money");
+	                return;
+	            } else {
+	                System.out.println("Error. You have " + (attempts-1) + " attempts remaining.");
+	                attempts--;
+	            }
+	        } while (attempts > 0);
+
+	        System.out.println("Out of attempts. Please contact customer support.");       
+    }
+	
+	public void Ex4(String str)
+	{
+		int length = str.length();
+	    boolean isPalindrome = true;
+
+	    for (int i = 0; i < length / 2; i++) {
+	        if (str.charAt(i) != str.charAt(length - 1 - i)) {
+	            isPalindrome = false;
+	            break;
+	        }
+	    }
+
+	    if (isPalindrome) {
+	        System.out.println("Palindrome");
+	    } else {
+	        System.out.println("Not a palindrome");
+	    }
+	}
+	
+	public void Ex5(int num)
+	{
+		String strnum = String.valueOf(num);
+		for(int i=0; i<strnum.length(); i++)
+		{
+			System.out.print(strnum.charAt(i) + ", ");
+		}
+	}
+	
+	public void Ex6()
+	{
+		for(int i=1; i<11;i++)
+		{
+			for(int j=1; j<11; j++)
+			{
+				System.out.print(i *j);
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public void Ex7()
+	{
+		Scanner scan = new Scanner(System.in);
+		int max=0;
+		System.out.println("enter a grade");
+		int grade = scan.nextInt();
+		int min=grade;
+		for(int i=0; i<7; i++)
+		{
+			System.out.println("enter a grade");
+			grade = scan.nextInt();
+			if(grade>max)
+				max= grade;
+			if(grade<min)
+				min=grade;
+		}
+		System.out.println(max + " , " + min);
+	}
+	
+	public boolean Ex8(int num) 
+	{
+        int a = 0, b = 1;
+        while (a <= num) {
+            if (a == num) {
+                return true;
+            }
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return false;
+    }
+	
+	public void Ex9(int num1, int num2)
+	{
+		int sum=0;
+		for(int i=0; i<num1; i++)
+		{
+			sum = sum+num2;
+		}
+		System.out.println(sum);
+	}
+	
+	public void Ex10(int height)
+	{
+		for (int i = 0; i < height; i++) {
+            // הדפסת רווחים לפני הכוכביות
+            for (int j = 0; j < height - i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            // הדפסת כוכביות
+            for (int k = 0; k < 2 * i + 1; k++) {
+                System.out.print("*");
+            }
+
+            // הדפסת שורה חדשה לסיום השורה
+            System.out.println();
+        }
+	}
+}
